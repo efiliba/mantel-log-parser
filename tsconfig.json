@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    /* https://www.youtube.com/watch?app=desktop&v=eJXVEju3XLM */
+    "esModuleInterop": true, // Allow importing CommonJS modules in ES modules
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "target": "ES2022", // Features supported
+    "verbatimModuleSyntax": true, // Ensure you are using the correct module syntax
+    "allowJs": true,
+    "resolveJsonModule": true, // Allow importing JSON files as modules
+    "moduleDetection": "force", // Treat each file as a module (not global script)
+    
+    "strict": true,
+    "noUncheckedIndexedAccess": true, // Check for unsafe indexing
+
+    "moduleResolution": "Bundler",
+    "module": "ESNext",
+    "noEmit": true,
+
+    "lib": ["ES2022"], // Libraries to include in the compilation
+  }
+}
