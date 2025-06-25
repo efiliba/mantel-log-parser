@@ -16,3 +16,5 @@ export const fields = z.object({
   userAgent: z.string().default("-"),
   extraFields: z.array(z.string()).default([]),
 });
+
+export type LogFields = z.infer<typeof fields>;

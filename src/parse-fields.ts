@@ -1,4 +1,4 @@
-import { fields } from "../schemas/fields";
+import { fields } from "./schemas/fields";
 
 const HTTP_VERBS = [
   "GET",

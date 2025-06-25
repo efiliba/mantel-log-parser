@@ -4,6 +4,7 @@
   "description": "Mantel test to parse log files",
   "main": "index.js",
   "scripts": {
+    "start": "pnpm build && node dist/index.js ${FILE:-programming-task-example-data.log}",
     "test": "vitest",
     "build": "tsc"
   },

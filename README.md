@@ -22,3 +22,15 @@ Valid log entries consist of the following fields:
 - extraFields
 
 # Instructions
+
+To start with the default `programming-task-example-data.log` file
+
+```bash
+pnpm start
+```
+
+You can name of the file to parse by providing it to FILE before the start script
+
+```bash
+FILE=path/use-this-file.log pnpm start
+```
