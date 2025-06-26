@@ -4,6 +4,7 @@
   "description": "Mantel test to parse log files",
   "main": "index.js",
   "scripts": {
+    "dev": "tsx src/index.ts programming-task-example-data.log",
     "start": "pnpm build && node dist/index.js ${FILE:-programming-task-example-data.log}",
     "test": "vitest",
     "build": "tsc"
@@ -15,6 +16,7 @@
   },
   "devDependencies": {
     "@types/node": "^24.0.4",
+    "tsx": "^4.20.3",
     "typescript": "^5.8.3",
     "vitest": "^3.2.4"
   }

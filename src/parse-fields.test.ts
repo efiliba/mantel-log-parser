@@ -21,8 +21,8 @@ describe("parseFields", () => {
         resource: "/intranet-analytics/",
         protocol: "HTTP/1.1",
       },
-      statusCode: "200",
-      responseSize: "3574",
+      statusCode: 200,
+      responseSize: 3574,
       referer: "-",
       userAgent:
         "Mozilla/5.0 (X11; U; Linux x86_64; fr-FR) AppleWebKit/534.7 (KHTML, like Gecko) Epiphany/2.30.6 Safari/534.7",
@@ -47,8 +47,8 @@ describe("parseFields", () => {
         resource: "/",
         protocol: "HTTP/1.1",
       },
-      statusCode: "200",
-      responseSize: "3574",
+      statusCode: 200,
+      responseSize: 3574,
       referer: "-",
       userAgent:
         "Mozilla/5.0 (compatible; MSIE 10.6; Windows NT 6.1; Trident/5.0; InfoPath.2; SLCC1; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; .NET CLR 2.0.50727) 3gpp-gba UNTRUSTED/1.0",
@@ -63,5 +63,15 @@ describe("parseFields", () => {
 
     expect(success).toBe(false);
     expect(error).toBeInstanceOf(ZodError);
+  });
+
+  it("should fix issues with preceding 0s in ip address", () => {
+    const line =
+      '050.000.00.28 - - [11/Jul/2018:15:49:46 +0200] "GET resource HTTP/1.1" 200 3574 "-" "referer header"';
+
+    const { success, data: actual } = parseFields(line);
+
+    expect(success).toBe(true);
+    expect(actual?.ipAddress).toBe("50.0.0.28");
   });
 });

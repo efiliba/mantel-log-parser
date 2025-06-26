@@ -1,9 +1,11 @@
 # Mantel Log File Parser Test
 
-Test to parse log a file and answer specific questions about the logs.\
-Format of the log file specified under Assumptions.
+Test to parse a log file and answer specific questions about the logs.\
+Format of the log file is specified under Assumptions.
 
 # Assumptions
+
+As TypeScript transpiles to JavaScript, I believe it meets the requirement of using JavaScript for this assessment.
 
 Valid log entries consist of the following fields:
 
@@ -16,10 +18,16 @@ Valid log entries consist of the following fields:
   - resource
   - protocol
 - statusCode
-- resposeSize
+- responseSize
 - referer
 - userAgent
 - extraFields
+
+IP Addresses with preceding octets of 0 e.g. 50.112.00.11 are treated as 50.112.0.11
+
+## Queries
+
+Visited URLs should only include successful visits
 
 # Instructions
 
@@ -29,7 +37,7 @@ To start with the default `programming-task-example-data.log` file
 pnpm start
 ```
 
-You can name of the file to parse by providing it to FILE before the start script
+You can pass the name of the file to parse by providing it to FILE before the start script e.g.:
 
 ```bash
 FILE=path/use-this-file.log pnpm start
